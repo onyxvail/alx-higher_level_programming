@@ -1,0 +1,45 @@
+The ``say_my_name`` module
+===============================================================================
+
+Using ``say_my_name``
+-------------------------------------------------------------------------------
+
+Import say_my_name form 3-say_my_name
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+It should print out the 'My name is <first_name> <last_name>'
+
+    >>> say_my_name('ons', 'hafi')
+    My name is ons hafi
+
+It should work fine if we does'nt pass last_name
+
+    >>> say_my_name('ons')
+    My name is ons 
+
+It should ignore space if we pass empty first_name
+
+    >>> say_my_name('', 'hafi')
+    My name is  hafi
+
+It should raise exception if we pass somthing other than string for first_name
+
+    >>> say_my_name(100, 'hafi')
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+It should raise exception if we pass somthing other than string for last_name
+
+    >>> say_my_name('ons', 98)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+It should raise exception if we pass something other than string for both
+
+    >>> say_my_name(100, 98)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
